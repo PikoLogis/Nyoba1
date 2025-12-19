@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Busana | PikoWedding</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- STYLE DASAR --- */
+        :root { --primary-color: #d4af37; --bg-color: #f9f9f9; --text-color: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+
+        /* HEADER */
+        .header { padding: 1.5rem 5%; background: #fff; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: 'Great Vibes', cursive; font-size: 1.8rem; color: var(--primary-color); font-weight: bold; text-decoration: none; }
+        .btn-back { padding: 0.5rem 1.5rem; border: 1px solid #ddd; border-radius: 20px; text-decoration: none; font-size: 0.9rem; transition: 0.3s; color: #555; }
+        .btn-back:hover { border-color: var(--primary-color); color: var(--primary-color); background: #fff; }
+
+        /* CONTAINER UTAMA */
+        .container { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; }
+        
+        .page-title { text-align: center; margin-bottom: 3.5rem; }
+        .page-title h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .page-title p { color: #666; font-size: 1.1rem; }
+
+        /* GRID SYSTEM */
+        .gallery-grid {
+            display: grid;
+            /* Mengatur kolom otomatis, minimal lebar kartu 320px agar teks muat enak */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: start; /* Agar tinggi kartu menyesuaikan konten */
+        }
+
+        /* CARD STYLE */
+        .gallery-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Agar kartu terlihat rapi */
+        }
+        
+        .gallery-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15); /* Bayangan emas tipis */
+        }
+
+        /* AREA GAMBAR */
+        .img-wrapper {
+            height: 450px; /* Tinggi Portrait untuk Busana */
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-card:hover img { transform: scale(1.08); }
+
+        /* LABEL KATEGORI */
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* AREA TEKS INFO */
+        .card-info { padding: 1.5rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-info h3 { font-size: 1.25rem; margin-bottom: 0.8rem; color: #222; }
+        
+        /* Deskripsi Karakteristik */
+        .card-info .desc { 
+            font-size: 0.9rem; 
+            color: #666; 
+            margin-bottom: 1.5rem; 
+            text-align: justify; /* Rata kanan-kiri agar rapi */
+            text-align-last: center; /* Baris terakhir di tengah */
+            line-height: 1.6;
+        }
+
+        .btn-detail {
+            margin-top: auto; /* Dorong tombol ke paling bawah */
+            display: inline-block;
+            padding: 0.6rem 0;
+            width: 100%;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn-detail:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">PikoWedding</a>
+        <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h1>Koleksi Busana Eksklusif</h1>
+            <p>Pancarkan aura pengantin dengan pilihan busana terbaik kami</p>
+        </div>
+
+        <div class="gallery-grid">
+            
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="img/busana/bsa1.jpg" alt="Pengantin Adat Jawa">
+                    <span class="category-tag">Traditional Royal</span>
+                </div>
+                <div class="card-info">
+                    <h3>Adat Jawa Kanigaran</h3>
+                    <p class="desc">
+                        Menggunakan bahan dasar beludru (velvet) hitam pekat yang dihiasi bordir benang emas. Memberikan kesan mewah, klasik, dan agung ala bangsawan keraton.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="img/busana/bsa2.jpg" alt="Pengantin Akad Putih">
+                    <span class="category-tag">Holy Matrimony</span>
+                </div>
+                <div class="card-info">
+                    <h3>Akad Nikah Modern</h3>
+                    <p class="desc">
+                        Didominasi warna putih bersih yang melambangkan kesucian, menggunakan bahan lace atau brokat perancis. Model ini dikhususkan untuk kesakralan prosesi ijab kabul.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="img-wrapper">
+                    <img src="img/busana/bsa3.jpg" alt="Kebaya Resepsi Gold">
+                    <span class="category-tag">Glamour Reception</span>
+                </div>
+                <div class="card-info">
+                    <h3>Kebaya Modern Gold</h3>
+                    <p class="desc">
+                        Kebaya panjang dengan full payet atau brokat berwarna emas tembaga. Memadukan potongan modern dengan pakem tradisional jarik, menciptakan kesan glamor dan elegan.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer><p>&copy; 2024 PikoWedding. All Rights Reserved.</p></footer>
+</body>
+</html>

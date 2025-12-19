@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PikoWedding | Wedding Organizer & Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PikoWedding</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <h1>PikoWedding</h1>
+        <p>Wujudkan Pernikahan Impian Anda Menjadi Kenyataan Abadi.</p>
+        <a href="#contact" class="btn">Konsultasi Gratis</a>
+    </header>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Layanan Kami</h2>
+        
+        <div class="services-grid">
+            
+            <div class="service-card" id="card-foto">
+                <div class="image-stack">
+                    <img src="img/fotografi/fto1.jpg" class="bg-image active" alt="Fotografi 1">
+                    <img class="bg-image" alt="Fotografi 2"> 
+                </div>
+
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="info-box">
+                        <h3>Fotografi & Video</h3>
+                        <p>Dokumentasi momen sakral cinematic & album eksklusif.</p>
+                    </div>
+                    <a href="portfolio-foto.html" class="btn-pill">Lihat Portfolio</a>
+                </div>
+            </div>
+
+            <div class="service-card" id="card-dekor">
+                <div class="image-stack">
+                    <img src="img/dekorasi/dkr1.jpg" class="bg-image active" alt="Dekorasi 1">
+                    <img class="bg-image" alt="Dekorasi 2">
+                </div>
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="info-box">
+                        <h3>Dekorasi</h3>
+                        <p>Tema Rustic, Modern, Adat, hingga Minimalis Elegan.</p>
+                    </div>
+                    <a href="katalog-dekor.html" class="btn-pill">Lihat Tema</a>
+                </div>
+            </div>
+
+            <div class="service-card" id="card-catering">
+                <div class="image-stack">
+                    <img src="img/makan/mkn1.jpg" class="bg-image active" alt="Catering 1">
+                    <img class="bg-image" alt="Catering 2">
+                </div>
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="info-box">
+                        <h3>Catering Premium</h3>
+                        <p>Hidangan Buffet Nusantara, Western & Stall Gubukan.</p>
+                    </div>
+                    <a href="menu-catering.html" class="btn-pill">Lihat Menu</a>
+                </div>
+            </div>
+
+            <div class="service-card" id="card-busana">
+                <div class="image-stack">
+                    <img src="img/busana/bsa1.jpg" class="bg-image active" alt="Busana 1">
+                    <img class="bg-image" alt="Busana 2">
+                </div>
+                <div class="service-overlay"></div>
+                <div class="service-content">
+                    <div class="info-box">
+                        <h3>Rias & Busana</h3>
+                        <p>Koleksi Gaun, Kebaya Modern & MUA Profesional.</p>
+                    </div>
+                    <a href="katalog-busana.html" class="btn-pill">Lihat Koleksi</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Hubungi Kami</h2>
+        <div class="contact-container">
+            <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" required placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group"><label for="email">Email / WhatsApp</label><input type="text" id="email" required></div>
+                <div class="form-group"><label for="date">Rencana Tanggal</label><input type="date" id="date"></div>
+                <div class="form-group"><label for="message">Pesan</label><textarea id="message" rows="5"></textarea></div>
+                <button type="submit" class="btn" style="width: 100%;">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <footer><p>&copy; 2024 PikoWedding. All Rights Reserved.</p></footer>
+
+    <script>
+        function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
+        function handleFormSubmit(event) { event.preventDefault(); alert(`Pesan Terkirim!`); document.getElementById('bookingForm').reset(); }
+
+        /* --- LOGIKA ANIMASI CROSS-FADE SEMPURNA --- */
+        
+        // Database Gambar Lokal
+        const slideImages = {
+            'card-foto': ['img/fotografi/fto1.jpg', 'img/fotografi/fto2.jpg', 'img/fotografi/fto3.jpg'],
+            'card-dekor': ['img/dekorasi/dkr1.jpg', 'img/dekorasi/dkr2.jpg', 'img/dekorasi/dkr3.jpg'],
+            'card-catering': ['img/makan/mkn1.jpg', 'img/makan/mkn2.jpg', 'img/makan/mkn3.jpg'],
+            'card-busana': ['img/busana/bsa1.jpg', 'img/busana/bsa2.jpg', 'img/busana/bsa3.jpg']
+        };
+
+        // Index pelacak untuk setiap kartu
+        let slideIndex = { 'card-foto': 0, 'card-dekor': 0, 'card-catering': 0, 'card-busana': 0 };
+
+        function changeImageCrossFade(cardId) {
+            const cardElement = document.getElementById(cardId);
+            const imageStack = cardElement.querySelector('.image-stack');
+            const images = slideImages[cardId];
+            
+            // 1. Cari gambar yang sedang AKTIF (terlihat) dan yang TIDAK AKTIF (tersembunyi)
+            const activeImg = imageStack.querySelector('.bg-image.active');
+            const nextImg = imageStack.querySelector('.bg-image:not(.active)');
+
+            // 2. Hitung index gambar selanjutnya
+            slideIndex[cardId] = (slideIndex[cardId] + 1) % images.length;
+            const nextImageSrc = images[slideIndex[cardId]];
+
+            // 3. Siapkan gambar di elemen yang tidak aktif
+            nextImg.src = nextImageSrc;
+
+            // 4. Trik Penting: Tunggu gambar termuat dulu, baru lakukan transisi
+            // Ini mencegah efek 'garing' jika gambar belum siap tapi sudah dipaksa muncul.
+            nextImg.onload = () => {
+                // Tukar status class 'active'. 
+                // CSS transition akan otomatis menangani efek pemudaran (opacity 0 <-> 1)
+                activeImg.classList.remove('active');
+                nextImg.classList.add('active');
+            };
+
+            // Jaga-jaga jika gambar sudah di-cache browser (onload kadang tidak terpanggil)
+            if (nextImg.complete) {
+               activeImg.classList.remove('active');
+               nextImg.classList.add('active');
+            }
+        }
+
+        // Interval waktu yang berbeda-beda untuk kesan dinamis
+        setInterval(() => changeImageCrossFade('card-foto'), 5000);
+        setInterval(() => changeImageCrossFade('card-dekor'), 5500);
+        setInterval(() => changeImageCrossFade('card-catering'), 4500);
+        setInterval(() => changeImageCrossFade('card-busana'), 6000);
+    </script>
+</body>
+</html>
