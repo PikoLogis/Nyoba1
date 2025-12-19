@@ -1,0 +1,88 @@
+
+        /* --- CSS DASAR (TIDAK BERUBAH) --- */
+        :root { --primary-color: #d4af37; --secondary-color: #f9f9f9; --text-dark: #333333; --text-light: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-dark); background-color: var(--secondary-color); }
+        h1, h2, h3 { color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .logo { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--primary-color); font-weight: bold; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
+
+        /* --- HERO SECTION --- */
+        .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--text-light); padding: 0 1rem; }
+        .hero h1 { font-family: 'Great Vibes', cursive; font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+        .btn { padding: 0.8rem 2rem; background-color: var(--primary-color); color: white; border-radius: 30px; font-weight: 600; transition: transform 0.3s, background 0.3s; display: inline-block; cursor: pointer; border: none; }
+        .btn:hover { background-color: #b8962e; transform: translateY(-3px); }
+
+        /* --- SERVICES SECTION --- */
+        .section { padding: 5rem 10%; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 3rem; position: relative; display: inline-block; }
+        .section-title::after { content: ''; display: block; width: 50%; height: 3px; background: var(--primary-color); margin: 0.5rem auto 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 3rem; }
+
+        /* --- CARD STYLE (PERUBAHAN PENTING DISINI) --- */
+        .service-card {
+            position: relative;
+            height: 420px;
+            border-radius: 25px;
+            overflow: hidden; /* Penting agar gambar tidak keluar kotak */
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+
+        /* Container untuk menumpuk 2 gambar */
+        .image-stack {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+        }
+
+        /* Style untuk kedua gambar dalam tumpukan */
+        .bg-image {
+            position: absolute; /* Kunci agar menumpuk di posisi sama */
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            /* Transisi opacity selama 2 detik agar SANGAT halus */
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+            opacity: 0; /* Default transparan */
+        }
+
+        /* Gambar yang sedang aktif (terlihat) */
+        .bg-image.active {
+            opacity: 1;
+            z-index: 1; /* Pastikan di atas */
+        }
+
+        /* Efek Zoom halus saat hover pada gambar aktif */
+        .service-card:hover .bg-image.active {
+            transform: scale(1.05);
+        }
+
+        /* Overlay dan Konten (Tidak berubah) */
+        .service-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 75%; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.8) 60%, #ffffff 90%, #ffffff 100%); z-index: 2; pointer-events: none; }
+        .service-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.5rem; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .info-box { background: #fff; width: 100%; padding: 1rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid rgba(0,0,0,0.03); }
+        .info-box h3 { font-size: 1.25rem; color: var(--primary-color); margin-bottom: 0.3rem; }
+        .info-box p { font-size: 0.85rem; color: #666; line-height: 1.4; }
+        .btn-pill { background-color: var(--primary-color); color: white; padding: 0.6rem 2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3); transition: background 0.3s; }
+        .btn-pill:hover { background-color: #b8962e; }
+        
+        /* CONTACT & FOOTER */
+        .contact-container { display: flex; justify-content: center; }
+        form { width: 100%; max-width: 600px; background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
+        footer { background-color: #222; color: #fff; text-align: center; padding: 2rem; margin-top: 2rem; }
+        @media (max-width: 768px) { .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; right: 0; background-color: #fff; width: 100%; text-align: center; padding: 1rem 0; box-shadow: 0 5px 5px rgba(0,0,0,0.1); } .nav-links.active { display: flex; } .hamburger { display: block; } .hero h1 { font-size: 3rem; } }
