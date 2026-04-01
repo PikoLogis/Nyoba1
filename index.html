@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PikoWedding | Wedding Organizer & Service</title>
+    <title>WeddingService | Wedding Organizer & Service</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
 
     <nav>
-        <div class="logo">PikoWedding</div>
+        <div class="logo">WeddingService</div>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <ul class="nav-links">
             <li><a href="#home">Beranda</a></li>
@@ -21,9 +22,9 @@
     </nav>
 
     <header id="home" class="hero">
-        <h1>PikoWedding</h1>
+        <h1>WeddingService</h1>
         <p>Wujudkan Pernikahan Impian Anda Menjadi Kenyataan Abadi.</p>
-        <a href="#contact" class="btn">Konsultasi Gratis</a>
+        <a href="#contact" class="btn">Kontak Sekarang</a>
     </header>
 
     <section id="services" class="section">
@@ -95,23 +96,48 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2 class="section-title">Hubungi Kami</h2>
-        <div class="contact-container">
-            <form id="bookingForm" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Nama Lengkap</label>
-                    <input type="text" id="name" required placeholder="Masukkan nama Anda">
-                </div>
-                <div class="form-group"><label for="email">Email / WhatsApp</label><input type="text" id="email" required></div>
-                <div class="form-group"><label for="date">Rencana Tanggal</label><input type="date" id="date"></div>
-                <div class="form-group"><label for="message">Pesan</label><textarea id="message" rows="5"></textarea></div>
-                <button type="submit" class="btn" style="width: 100%;">Kirim Pesan</button>
-            </form>
-        </div>
-    </section>
+<section id="contact" class="section">
+    <h2 class="section-title">Kontak Kami</h2>
 
-    <footer><p>&copy; 2024 PikoWedding. All Rights Reserved.</p></footer>
+    <div class="contact-container" style="text-align:center;">
+        
+        <p>Hubungi & ikuti kami</p>
+</div>
+        <div style="display:flex; justify-content:center; gap:25px; font-size:30px; margin:20px 0;">
+            
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6281234567890" target="_blank" style="color:#25D366;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" style="color:#FF0000;">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" style="color:#1877F2;">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" style="color:#E4405F;">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://tiktok.com" target="_blank" style="color:#000;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+
+        </div>
+
+        <p>Terimakasih</p>
+
+    </div>
+</section>
+
+    <footer><p>&copy; 2024 WeddingService. All Rights Reserved.</p></footer>
 
     <script>
         function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
